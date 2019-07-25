@@ -1,0 +1,9 @@
+Date: 07/26/2019,Venue: KAOS Vegas,City: Las Vegas,State: NV,Country: United States
+------------------------------------------------------------
+
+Title: The Matrix,Release Year: undefined,Rating: 8.7,Rotten Tomatoes Rating: 88%,Country Produced In: USA,Movie Language: English,Movie Plot:A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.,Actors: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+------------------------------------------------------------
+
+Title: The Matrix,Release Year: 1999,Rating: 8.7,Rotten Tomatoes Rating: 88%,Country Produced In: USA,Movie Language: English,Movie Plot:A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.,Actors: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+------------------------------------------------------------
+
