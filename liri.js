@@ -9,6 +9,7 @@ var term = process.argv.slice(3).join(" ")
 
 var bands = new Bands();
 var movie = new Movie();
+var music = require("./spotify");
 // var spotify = new Spotify(keys.spotify);
 
 if (userInput === "concert-this") {
@@ -16,15 +17,22 @@ if (userInput === "concert-this") {
     bands.findShow(term);
 } 
 if (userInput === "spotify-this-song"){
+    if (!term) {
+        term = "The Sign Ace of Base"
+    }
     console.log("Searching Spotify for song.")
+    music(term);
 }
 if (userInput === "movie-this") {
-    console.log("Searching for movie.")
+    if (!term) {
+        term = "Mr. Nobody";
+    }
+    console.log("Searching for movie.");
     movie.findMovie(term);
 }
+
 if (userInput === "do-what-it-says") {
     console.log("Doing what it says")
 }
-if (!userInput) {
-    console.log("default")
-}
+
+

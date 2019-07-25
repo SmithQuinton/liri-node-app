@@ -1,36 +1,34 @@
-var spotify = require("node-spotify-api");
+var Spotify = require("node-spotify-api");
 var keys = require("./keys.js");
+var fs = require("fs");
 
 var spotify = new Spotify(keys.spotify);
 
+var Spotifysearch = function(term) {
+    spotify.search({ type: 'track', query: term }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+       
+    //   console.log(data.tracks.items[0]);
+    //   console.log("artist name: " + data.tracks.items[0].artists[0].name); 
+      var songs = data.tracks.items[0];
+      console.log("artist name: " + songs.artists[0].name);
 
-var Spotify = function() {
-    var divider = "\n------------------------------------------------------------\n\n";
+      var songString =[
+        "Artist: " + songs.artists[0].name,
+        "Song Title: " + songs.name,
+        "Preview Link: " + songs.external_urls.spotify,
+        "Album Title: " + songs.album.name,
+    ].join("\n\n");
 
-    this.findMusic = function(film) {
-        var URL = "http://www.omdbapi.com/?apikey=trilogy&plot=short&t=" + film;
-
-        axios.get(URL).then(function(response) {
-            var jsonData = response.data;
-
-            var movieData = [
-                "Title: " + jsonData.Title,
-                "Release Year: " + jsonData.Year,
-                "Rating: " + jsonData.imdbRating,
-                "Rotten Tomatoes Rating: " + jsonData.Ratings[1].Value,
-                "Country Produced In: " + jsonData.Country,
-                "Movie Language: " + jsonData.Language,
-                "Movie Plot:" + jsonData.Plot,
-                "Actors: " + jsonData.Actors,
-            ]
-            fs.appendFile("log.txt", movieData + divider, function(err) {
-                if (err) throw err;
-                console.log(movieData);
-              });
-        })
-    }
+    fs.appendFile("log.txt", songString, function (err) {
+        if (err) throw err;
+        console.log(songString)
+    });
+      });
 }
 
 
 
-module.exports = Spotify;
+module.exports = Spotifysearch;
