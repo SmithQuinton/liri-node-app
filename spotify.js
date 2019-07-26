@@ -18,7 +18,7 @@ var Spotifysearch = function(term) {
       var songString =[
         "Artist: " + songs.artists[0].name,
         "Song Title: " + songs.name,
-        "Preview Link: " + songs.external_urls.spotify,
+        "Preview Link: " + songs.preview_url,
         "Album Title: " + songs.album.name,
     ].join("\n\n");
 
